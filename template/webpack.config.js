@@ -110,13 +110,23 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: false,
+      comments: false, // 去掉注释
       compress: {
         warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    new CompressionPlugin({ // gzip 压缩
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: new RegExp(
+        '\\.(js|css)$' // 压缩 js 与 css
+      ),
+      threshold: 10240,
+      minRatio: 0.8
     })
   ])
 }
