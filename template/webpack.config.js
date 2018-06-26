@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   entry: './src/main.js',
