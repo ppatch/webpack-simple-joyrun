@@ -6,7 +6,7 @@ exports.externalShare = function(Vue){
       var curUrl = encodeURIComponent(window.location.href);
         $.ajax({
               type: 'get',
-              url: '//webevent.thejoyrun.com/wechatapi/jsconfig?url='+curUrl,
+              url: '',
               dataType: 'jsonp',
               cache: false,
               success: function(data) {
