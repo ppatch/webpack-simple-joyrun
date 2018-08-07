@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const index = () => resolve => require(['@/pages/index'], resolve)
+const index = () => import('@/pages/index')
 
 Vue.use(Router)
 
