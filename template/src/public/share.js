@@ -6,7 +6,7 @@ exports.externalShare = function(Vue){
       var curUrl = encodeURIComponent(window.location.href);
         $.ajax({
               type: 'get',
-              url: '',
+              url: '//{{ shareHost }}/wechatapi/jsconfig?url='+curUrl,
               dataType: 'jsonp',
               cache: false,
               success: function(data) {
